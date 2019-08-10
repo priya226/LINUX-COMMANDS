@@ -1,0 +1,98 @@
+﻿Some basics terminal commands that helps beginners
+
+
+1.sudo :SuperUserDo is most important command for linux newbies. Every command that need root’s permission, need this sudo command.
+
+2.apt-get : It is used to install,update and remove any apckage. Apt-get basically works on a dtaset of available package.
+
+    • sudo apt-get update :
+      
+      apt-get update with super user privileges is the first command you need to run in any Linux system after a fresh install. This command updates the database and let your system know if there are newer packages available or not.
+      
+    • sudo apt-get upgrade :
+      
+      After updating the package database, next step is to to upgrade the installed packages. For upgrading all the packages with available updates you can use this command.
+      And if you like to upgrade a particular package, you should tweak the above command a little:
+      
+      sudo apt-get upgrade <package-name>
+      Replace the <package-name> with your desired package.
+
+
+    •  sudo apt-get install :
+      
+      If you know the name of the package, then you can easily install a program using this command:
+      
+      sudo apt-get install <package-name> 
+      Replace the <package-name> with your desired package.
+
+
+    • sudo apt-get remove :
+      
+      When it comes to removing the installed program apt-get remove command suits your need. You only have to know the exact package name of the software you want to uninstall.
+      
+      sudo apt-get remove <package-name>
+      Replace the <package-name> with package you wnat to remove.
+        
+      If you don’t know the package name, use below ubuntu basic command to list all the packages installed on your system and then copy the package name from the list:
+      
+      dpkg --list
+      Now run the apt-get remove command as sudo in order to remove the software:
+      sudo apt-get remove <package-name>
+      Replace the <package-name> with the one you copied from the dpkg list.
+      apt-get remove command only removes the software from your system but not the configuration or data files of the package. These files help in keeping the same settings when you want to reinstall the same software.
+      
+      
+    •  sudo apt-get purge :  apt-get purge command is used when you want to remove a software completely from your system with its configuration or data files so that no longer personalized settings will be available during reinstallation.
+      Run the apt-get purge command as sudo in order to remove the software completely:
+      
+      sudo apt-get purge <package-name>
+      Replace the <package-name> with the application that you want to remove or copied from the dpkg list.
+      
+    •  sudo apt-get autoremove :
+      apt-get autoremove command is used to remove any unnecessary packages. Unnecessary means, whenever you install an application, the system will also install the software that this application depends on. It is common in Ubuntu that applications share the same libraries. When you remove the application the dependency will stay on your system.
+      
+      So run apt-get autoremove as sudo after uninstalling a package to remove unwanted software dependencies.
+
+    •  ls :    list of files in current directory.
+
+    •  ls -al : list all files and hidden file as well.
+
+    • cd/  :   takes to root of directory
+
+    • cd .. : takes up one directory level
+              My\ Drive – open My Drive named folder in directory. Here you can see I use backslash because the folder name has spaces so for each space you use “backslash+space”. Like, if your folder name is “a programmer” then the cd command will be, “cd a\ programmer”.
+
+
+
+
+
+    • Pwd   :   prints working directory.
+      
+    • cp  :  copy file .
+      cp xyz /home/myfiles   [xyz file is copied to given folder]
+      
+    • mv  : move files and we can also rename file by moving them into directory they are currently in but with different name.
+
+    • Rm   :  removes file
+        rm file_name (file should be under current working directory )
+      
+    • mkdir :  to create new folder  under working directory
+      mkdir folder_name
+      
+    •  sudo poweroff :  directly poweroff from terminal
+      
+    • shutdown now : power off command
+      
+    • history : display all previous commands 
+      
+    • df :   display information about disk space uses all mounted system .
+       
+    • du :   command display size of directory and all subdirectory.
+      
+    • free :  dispaly amount of free space on the system.
+      
+    • passwd : changing password from terminal.
+
+    • whatis : display brief information about command.
+      whatis <command>
+      
