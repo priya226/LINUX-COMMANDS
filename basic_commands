@@ -95,4 +95,27 @@
 
     • whatis : display brief information about command.
       whatis <command>
+      ########creating virtual environment I named my_env
+      # login in root user and update and upgrade system
+      sudo apt update
+      sudo apt -y upgrade
+      # check python version
+        python3 -V
+      #install pip, a tool that will install and manage libraries or modules to use in your projects
+      sudo apt install -y python3-pip
+      # any package can be install using pip install package-name
+      sudo apt install -y python3-venv
+     # Create a Virtual Environment named my_env here
+      python3.6 -m venv my_env
+     # Activate Virtual Environment
+      source my_env/bin/activate
+     #Your command prompt will now be prefixed with the name of your environment:
+      (my_env) priya@priya-Lenovo-ideapad-320-15IKB:~$ 
+     # for deactivating 
+     deactivate my_env
+     #for again activate same as above
+      source my_env/bin/activate
+
+
+
       
