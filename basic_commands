@@ -118,6 +118,56 @@
      #for again activate same as above
       source my_env/bin/activate
 
+    #create / update file
+    #it creates a new file named example.txt if it doesn't exist, or updates its timestamp if it does
+    touch example.txt
+    #This will display detailed information about the file, including its access, modification, and change times.
+    stat example.txt  
+    #This sets the modification time of example.txt to January 1, 2030, at 12:00 PM.
+    touch -d "2030-01-01 12:00:00" example.txt
+
+    #command changes the permissions of files and directories. 
+    #It allows you to set 'r' read,'w' write, and'x' execute permissions for the 'u' owner,'g' group, and others
+    chmod [permissions] filename
+
+   # cat stands for "concatenate" command is used to display, concatenate, and create text files
+   #-n: Adds line numbers to the output
+   #-s: Squeezes multiple blank lines into a single line.
+   #-T: Displays tabs as ^I.
+   #-E: Displays line endings as $.
+   cat [options] filename
+   #Display a file's content: 
+   cat filename.txt
+   #Concatenate multiple files:
+   cat file1.txt file2.txt > combined.txt
+   #Create a new file:
+   cat > newfile.txt #(type content and press Ctrl + D to save)
+ 
+   #The nano command opens a simple text editor for creating or editing files.
+   nano [options] filename
+   #-B: Saves a backup of the current file.
+   #-E: Converts tabs to spaces.
+   #-i: Enables auto-indentation.
+   #-m: Enables mouse support.
+   #Open a file for editing, If file does not exist creates new file
+   nano filename.txt #To save and exit, press Ctrl + O, then Enter, and finally Ctrl + X.
+   
+   #This prints "Hello, World!" to the terminal.
+   echo "Hello, World!"
+   #This creates a new file named example.txt with the content "Hello, World!".
+   echo "Hello, World!" > example.txt
+   #This adds "This is an example." to the end of example.txt.
+   echo "This is an example." >> example.txt
+
+
+  
+
+
+
+
+
+
+
 
 
       
