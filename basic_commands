@@ -158,6 +158,37 @@
    echo "Hello, World!" > example.txt
    #This adds "This is an example." to the end of example.txt.
    echo "This is an example." >> example.txt
+ 
+
+  # The grep command in Linux is a powerful tool used to search for specific patterns within files. 
+  #It stands for "Global Regular Expression Print" and is essential for filtering text based on patterns. 
+  grep [options] pattern [file...]
+  #searches for lines containing "Linux" in example.txt.
+  grep "Linux" example.txt
+  #This searches for "linux" regardless of case.
+  grep -i "linux" example.txt
+  #This searches for "Linux" in all files within the specified directory and its subdirectories.
+  grep -r "Linux" /path/to/directory
+  #This displays lines that do not contain "Linux".
+  grep -v "Linux" example.txt
+  #This finds lines starting with "Linux". Regular Expression
+  grep "^Linux" example.txt
+  #This searches for lines containing either "Linux" or "Unix".
+  grep -E "Linux|Unix" example.txt
+  #You can pipe output from other commands to grep to filter results:
+  ls -l | grep "example"  #This lists files and directories containing "example" in their names.
+ #grep is a versatile command that can be used in various scenarios, such as searching logs, filtering command outputs, and finding specific patterns in large text files.
+
+
+
+
+
+
+
+
+
+
+
 
 
   
