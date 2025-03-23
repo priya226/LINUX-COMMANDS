@@ -177,7 +177,13 @@
   grep -E "Linux|Unix" example.txt
   #You can pipe output from other commands to grep to filter results:
   ls -l | grep "example"  #This lists files and directories containing "example" in their names.
- #grep is a versatile command that can be used in various scenarios, such as searching logs, filtering command outputs, and finding specific patterns in large text files.
+  #grep is a versatile command that can be used in various scenarios, such as searching logs, filtering command outputs, and finding specific patterns in large text files.
+ 
+  Command	   Primary Use	                    Complexity            	Input/Output
+  grep	     Search & Filter   	                  Simple             	File/Pipe → Terminal/Pipe
+  awk	     Data Processing & Manipulation	      Complex            	File/Pipe → Terminal/File
+  sed	     Text Editing	                      Complex	            File/Pipe → Terminal/File (can modify files directly)
+
 
 
 
