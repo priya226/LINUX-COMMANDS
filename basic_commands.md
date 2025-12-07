@@ -1,0 +1,212 @@
+﻿Some basics terminal commands that helps beginners
+
+
+1.sudo :SuperUserDo is most important command for linux newbies. Every command that need root’s permission, need this sudo command.
+
+2.apt-get : It is used to install,update and remove any apckage. Apt-get basically works on a dtaset of available package.
+
+    • sudo apt-get update :
+      
+      apt-get update with super user privileges is the first command you need to run in any Linux system after a fresh install. This command updates the database and let your system know if there are newer packages available or not.
+      
+    • sudo apt-get upgrade :
+      
+      After updating the package database, next step is to to upgrade the installed packages. For upgrading all the packages with available updates you can use this command.
+      And if you like to upgrade a particular package, you should tweak the above command a little:
+      
+      sudo apt-get upgrade <package-name>
+      Replace the <package-name> with your desired package.
+
+
+    •  sudo apt-get install :
+      
+      If you know the name of the package, then you can easily install a program using this command:
+      
+      sudo apt-get install <package-name> 
+      Replace the <package-name> with your desired package.
+
+
+    • sudo apt-get remove :
+      
+      When it comes to removing the installed program apt-get remove command suits your need. You only have to know the exact package name of the software you want to uninstall.
+      
+      sudo apt-get remove <package-name>
+      Replace the <package-name> with package you wnat to remove.
+        
+      If you don’t know the package name, use below ubuntu basic command to list all the packages installed on your system and then copy the package name from the list:
+      
+      dpkg --list
+      Now run the apt-get remove command as sudo in order to remove the software:
+      sudo apt-get remove <package-name>
+      Replace the <package-name> with the one you copied from the dpkg list.
+      apt-get remove command only removes the software from your system but not the configuration or data files of the package. These files help in keeping the same settings when you want to reinstall the same software.
+      
+      
+    •  sudo apt-get purge :  apt-get purge command is used when you want to remove a software completely from your system with its configuration or data files so that no longer personalized settings will be available during reinstallation.
+      Run the apt-get purge command as sudo in order to remove the software completely:
+      
+      sudo apt-get purge <package-name>
+      Replace the <package-name> with the application that you want to remove or copied from the dpkg list.
+      
+    •  sudo apt-get autoremove :
+      apt-get autoremove command is used to remove any unnecessary packages. Unnecessary means, whenever you install an application, the system will also install the software that this application depends on. It is common in Ubuntu that applications share the same libraries. When you remove the application the dependency will stay on your system.
+      
+      So run apt-get autoremove as sudo after uninstalling a package to remove unwanted software dependencies.
+
+    •  ls :    list of files in current directory.
+
+    •  ls -al : list all files and hidden file as well.
+
+    • cd/  :   takes to root of directory
+
+    • cd .. : takes up one directory level
+              My\ Drive – open My Drive named folder in directory. Here you can see I use backslash because the folder name has spaces so for each space you use “backslash+space”. Like, if your folder name is “a programmer” then the cd command will be, “cd a\ programmer”.
+
+
+
+
+
+    • Pwd   :   prints working directory.
+      
+    • cp  :  copy file .
+      cp xyz /home/myfiles   [xyz file is copied to given folder]
+      
+    • mv  : move files and we can also rename file by moving them into directory they are currently in but with different name.
+
+    • Rm   :  removes file
+        rm file_name (file should be under current working directory )
+      
+    • mkdir :  to create new folder  under working directory
+      mkdir folder_name1,folder_name2      //all folders will be created in same directory
+      
+    •  sudo poweroff :  directly poweroff from terminal
+      
+    • shutdown now : power off command
+      
+    • history : display all previous commands 
+      
+    • df :   display information about disk space uses all mounted system .
+       
+    • du :   command display size of directory and all subdirectory.
+      
+    • free :  dispaly amount of free space on the system.
+      
+    • passwd : changing password from terminal.
+
+    • whatis : display brief information about command.
+      whatis <command>
+      
+      
+      ########creating virtual environment I named my_env
+      # login in root user and update and upgrade system
+      sudo apt update
+      sudo apt -y upgrade
+      # check python version
+        python3 -V
+      #install pip, a tool that will install and manage libraries or modules to use in your projects
+      sudo apt install -y python3-pip
+      # any package can be install using pip install package-name
+      sudo apt install -y python3-venv
+     # Create a Virtual Environment named my_env here
+      python3.6 -m venv my_env
+     # Activate Virtual Environment
+      source my_env/bin/activate
+     #Your command prompt will now be prefixed with the name of your environment:
+      (my_env) priya@priya-Lenovo-ideapad-320-15IKB:~$ 
+     # for deactivating 
+     deactivate my_env
+     #for again activate same as above
+      source my_env/bin/activate
+
+    #create / update file
+    #it creates a new file named example.txt if it doesn't exist, or updates its timestamp if it does
+    touch example.txt
+    #This will display detailed information about the file, including its access, modification, and change times.
+    stat example.txt  
+    #This sets the modification time of example.txt to January 1, 2030, at 12:00 PM.
+    touch -d "2030-01-01 12:00:00" example.txt
+
+    #command changes the permissions of files and directories. 
+    #It allows you to set 'r' read,'w' write, and'x' execute permissions for the 'u' owner,'g' group, and others
+    chmod [permissions] filename
+
+   # cat stands for "concatenate" command is used to display, concatenate, and create text files
+   #-n: Adds line numbers to the output
+   #-s: Squeezes multiple blank lines into a single line.
+   #-T: Displays tabs as ^I.
+   #-E: Displays line endings as $.
+   cat [options] filename
+   #Display a file's content: 
+   cat filename.txt
+   #Concatenate multiple files:
+   cat file1.txt file2.txt > combined.txt
+   #Create a new file:
+   cat > newfile.txt #(type content and press Ctrl + D to save)
+ 
+   #The nano command opens a simple text editor for creating or editing files.
+   nano [options] filename
+   #-B: Saves a backup of the current file.
+   #-E: Converts tabs to spaces.
+   #-i: Enables auto-indentation.
+   #-m: Enables mouse support.
+   #Open a file for editing, If file does not exist creates new file
+   nano filename.txt #To save and exit, press Ctrl + O, then Enter, and finally Ctrl + X.
+   
+   #This prints "Hello, World!" to the terminal.
+   echo "Hello, World!"
+   #This creates a new file named example.txt with the content "Hello, World!".
+   echo "Hello, World!" > example.txt
+   #This adds "This is an example." to the end of example.txt.
+   echo "This is an example." >> example.txt
+   **** if forget > operator then it creates directory
+        if forget >> operator then it will overwrite not append
+
+ 
+  # The grep command in Linux is a powerful tool used to search for specific patterns within files. 
+  #It stands for "Global Regular Expression Print" and is essential for filtering text based on patterns. 
+  grep [options] pattern [file...]
+  #searches for lines containing "Linux" in example.txt.
+  grep "Linux" example.txt
+  #This searches for "linux" regardless of case.
+  grep -i "linux" example.txt
+  #This searches for "Linux" in all files within the specified directory and its subdirectories.
+  grep -r "Linux" /path/to/directory
+  #This displays lines that do not contain "Linux".
+  grep -v "Linux" example.txt
+  #This finds lines starting with "Linux". Regular Expression
+  grep "^Linux" example.txt
+  #This searches for lines containing either "Linux" or "Unix".
+  grep -E "Linux|Unix" example.txt
+  #You can pipe output from other commands to grep to filter results:
+  ls -l | grep "example"  #This lists files and directories containing "example" in their names.
+  #grep is a versatile command that can be used in various scenarios, such as searching logs, filtering command outputs, and finding specific patterns in large text files.
+ 
+  Command	   Primary Use	                    Complexity            	Input/Output
+  grep	     Search & Filter   	                  Simple             	File/Pipe → Terminal/Pipe
+  awk	     Data Processing & Manipulation	      Complex            	File/Pipe → Terminal/File
+  sed	     Text Editing	                      Complex	            File/Pipe → Terminal/File (can modify files directly)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+      
